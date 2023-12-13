@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thắp Hương Online</title>
+</head>
+<style>
+    #content{
+        width: 960px;
+        margin: 0 auto;
+    }
+    #content h1{
+        margin-left: 290px;
+    }
+    .text-center{
+        text-align: center;
+        height: auto;
+    }
+    #caynhang {
+            position: absolute; /* Set the position to absolute */
+            top: 0;
+            left: 0;
+            margin-top: 605px;
+            margin-left: 680px;
+            display: none; /* Hide the caynhang image initially */
+    }
+    #phat{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 250px;
+        margin-top: 10px;
+        margin-left: 15px;
+        display: none;
+    }
+    #inputElement {
+        width: 210px; /* Adjust the width as needed */
+        padding: 8px; /* Adjust the padding as needed */
+        border: 1px solid #8B4513; /* Brown border color */
+        border-radius: 4px; /* Optional: Add rounded corners */
+    }
+    #buttonDec{
+        height: 33px;
+        background: #8B4513;
+        color: #fff;
+        border-radius: 4px;
+    }
+</style>
+<body>
+    <div id="content">
+        <h1>Thắp Hương Để Qua Môn</h1>
+        <div class="text-center">
+            <img src="images/cong.png" alt="">
+            <br>
+            <img src="images/bathuong.png" alt="">
+            <img id="caynhang" src="images/caynhang.png" alt="">
+            <img id="phat" src="images/phat.png" alt="">
+            <br>
+            <input type="text" id="inputElement" placeholder="Nhập điều ước của thí chủ vào đây">
+            <button id="buttonDec" onclick="toggleImage()">Thắp Hương</button>
+            <audio id="audioElement" src="images/audio.mp3"></audio>
+        </div>
+    </div>
+    <script>
+        function toggleImage() {
+            var caynhangImage = document.getElementById("caynhang");
+            var phatImage = document.getElementById("phat");
+            var audioElement = document.getElementById("audioElement");
+
+            // Toggle the visibility of caynhang image
+            caynhangImage.style.display = caynhangImage.style.display === "none" ? "block" : "none";
+
+            // Toggle the visibility of phat image and position it at the top-left corner
+            phatImage.style.display = phatImage.style.display === "none" ? "block" : "none";
+            phatImage.style.top = "0";
+            phatImage.style.left = "0";
+
+            // Play the audio
+            audioElement.play();
+        }
+    </script>
+</body>
+</html>
